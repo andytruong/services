@@ -79,8 +79,10 @@ function _system_resource_definition() {
         ),
         'entity_info' => array(
           'help' => 'Get system entity info',
+          'file' => array('type' => 'inc', 'module' => 'services', 'name' => 'resources/system_resource'),
           'callback' => 'entity_get_info',
-          'access callback' => 'services_access_menu',
+          'access arguments' => array('get a system variable'),
+          'access arguments append' => FALSE,
           'args' => array(
             array(
               'name' => 'entity_type',
