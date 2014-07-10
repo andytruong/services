@@ -77,6 +77,20 @@ function _system_resource_definition() {
             ),
           ),
         ),
+        'entity_info' => array(
+          'help' => 'Get system entity info',
+          'callback' => 'entity_get_info',
+          'access callback' => 'services_access_menu',
+          'args' => array(
+            array(
+              'name' => 'entity_type',
+              'optional' => TRUE,
+              'source' => array('data' => 'entity_type'),
+              'description' => t('The entity type, e.g. node, for which the info shall be returned, or NULL to return an array with info about all types.'),
+              'type' => 'string',
+            ),
+          ),
+        ),
       ),
     ),
   );
