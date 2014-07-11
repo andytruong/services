@@ -93,6 +93,29 @@ function _system_resource_definition() {
             ),
           ),
         ),
+        'field_info_instances' => array(
+          'help' => 'Get system field info',
+          'file' => array('type' => 'inc', 'module' => 'services', 'name' => 'resources/system_resource'),
+          'callback' => 'field_info_instances',
+          'access arguments' => array('get a system variable'),
+          'access arguments append' => FALSE,
+          'args' => array(
+            array(
+              'name' => 'entity_type',
+              'optional' => TRUE,
+              'source' => array('data' => 'entity_type'),
+              'description' => t('The entity type, e.g. node, for which the info shall be returned, or NULL to return an array with info about all types.'),
+              'type' => 'string',
+            ),
+            array(
+                'name' => 'bundle_name',
+                'optional' => TRUE,
+                'source' => array('data' => 'bundle_name'),
+                'description' => t('Retrieves information about field instances.'),
+                'type' => 'string',
+            ),
+          ),
+        ),
       ),
     ),
   );
